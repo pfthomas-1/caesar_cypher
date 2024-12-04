@@ -6,19 +6,17 @@ let counter = 0; // Variable use to make the console easier to look through
 
 encryptForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    
-    counter++;
-
-    console.log(`Iteration ${counter}`);
 
     let message = document.getElementById("message").value;
     let position = document.getElementById("position").value;
     let direction = document.getElementById("direction").value;
     let mode = document.getElementById("mode").value;
 
-    console.log(`message: ${message}\nposition: ${position}\ndirection: ${direction}\nmode: ${mode}`); // for debugging if necessary
-
     if (message) {
+        counter++;
+        console.log(`Iteration ${counter}`);
+        console.log(`message: ${message}\nposition: ${position}\ndirection: ${direction}\nmode: ${mode}`); // for debugging if necessary
+        
         output.textContent = encrypt(message, position, direction, mode);
     } else {
         window.alert("Please enter a message and try again");
